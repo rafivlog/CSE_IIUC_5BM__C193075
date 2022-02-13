@@ -1,0 +1,26 @@
+.button-class {
+    font-size: 30px;
+}
+.button-class:hover{
+    background-color: red;
+}
+.table-class {
+    width: 100%;
+    margin-top: 10px;
+
+}
+
+#content {
+    margin-top: 5px;
+}
+.opacity{
+    opacity: 0.1;
+}
+
+.opacity:hover{
+    opacity: 1.5;
+    
+}
+
+
+    
