@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bismillah</title>
+    <!-- <link rel="stylesheet" href="css/class2.css"> -->
+    <!-- <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"> -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans&family=Ubuntu&display=swap" rel="stylesheet">
+    
+    
+    <!-- <script src="js/jquery-3.6.0.js"></script> -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery.validate.min.js"></script>
+    <script src="js/additional-methods.min.js"></script>
+    <link rel="stylesheet" href="css/jquery-ui.css">
+    <script src="js/jquery-ui.js"></script> 
+
+    <script>
+        $(function () {
+            $("#dob").datepicker();
+        });
+    </script>
+</head>
+<body>
+    <form method="post" action="">
+        <table>
+            <tr>
+                <td>Enter Name</td>
+                <td><input type="text" id="name" name="name"></td>
+            </tr>
+            <tr>
+                <td>Enter ID</td>
+                <td><input type="text" id="stud_id" name="stud_id"></td>
+            </tr>
+            <tr>
+                <td>Enter Phone Number</td>
+                <td><input type="text" id="mob" name="mob"></td>
+            </tr>
+            <tr>
+                <td>Date of Birth</td>
+                <td><input id="dob" name="dob"></td>
+            </tr>
+            <tr>
+                <td>Gender</td>
+                <td>
+                    <select name="gender">
+                        <option disabled selected value="Select Gender">Select Gender</option>
+                        <option>male</option>
+                        <option>female</option>
+                        <option>other</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <td>Boold Group</td>
+                <td>
+                    <select name="bg">
+                        <option disabled selected value="Select Boold Group">Select Boold Group</option>
+                        <option>A+</option>
+                        <option>A-</option>
+                        <option>B+</option>
+                        <option>B-</option>
+                        <option>AB+</option>
+                        <option>AB-</option>
+                        <option>O+</option>
+                        <option>O-</option>
+                    </select>
+                </td>
+            </tr>
+            
+            <tr>
+                <td>Enter Address</td>
+                <td><input type="text" id="address" name="address"></td>
+            </tr>
+            <tr>
+                <td>Enter New Password</td>
+                <td><input type="password" id="password" name="password"></td>
+            </tr>
+            <tr align="center">
+                <td></td>
+                <td><input type="submit" id="submitbtn" name="submitbtn"></td>
+            </tr>
+        </table>
+    </form> 
+
+
+
+	
+</body>
+</html>
+
+<?php
+  
+  $name       = $_POST['name'] ;
+    $stud_id  = $_POST['stud_id'] ;
+    $mob  = $_POST['mob'] ;
+    $dob  = $_POST['dob'] ;
+    $gender  = $_POST['gender'] ;
+    $bg    = $_POST['bg'] ;
+    $address  = $_POST['address'] ;
+    $password  = $_POST['password'] ;
+	
+    
+
+
+    $user = "root";
+    $pass = "";
+    $db = "webtool";
+    $db =mysqli_connect("localhost",$user,$pass,$db);
+    mysqli_query($db,"INSERT INTO iiuc(name,stud_id,mob,dob,gender,bg,address,password) values('$name','$stud_id','$mob','$dob','$gender','$bg','$address','$password')");
+
+
+?>
